@@ -12,7 +12,7 @@ import re
 app = Flask(__name__)
 app.config.from_object(flaskcode.default_config)
 app.register_blueprint(flaskcode.blueprint, url_prefix='/pythonlogin/flaskcode')
-app.config['FLASKCODE_RESOURCE_BASEPATH'] = '/'
+app.config['FLASKCODE_RESOURCE_BASEPATH'] = 'D:/Studia/Sezon4/IO/Projekt_In-ynieria_Oprogramowania/SkyCode'
 
 app.secret_key = 'lubie_placki'
 
@@ -249,7 +249,7 @@ def groups_menu():
 
     return redirect(url_for('login'))
 
-@app.route('/pythonlogin/flaskcode')
+@app.route('/pythonlogin/flaskcode', methods=['GET','POST'])
 def editor():
     if 'loggedin' in session:
         pass
