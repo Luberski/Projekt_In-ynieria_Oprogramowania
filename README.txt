@@ -19,4 +19,4 @@ Run command: flask run
 
 #####################################
 
-app.config['FLASKCODE_RESOURCE_BASEPATH'] = 'Ścieżka/do/folderu/z/zasobami'
+app.config['FLASKCODE_RESOURCE_BASEPATH'] = 'Ścieżka/do/folderu/z/zasobami' // Należy wstawić ścieżkę bezwzględną do folderu na dysku lub zmienić na "/"
