@@ -249,13 +249,6 @@ def groups_menu():
 
     return redirect(url_for('login'))
 
-@app.route('/pythonlogin/file')
-def file():
-    if 'loggedin' in session:
-        return redirect(url_for('editor'))
-
-    return redirect(url_for('login'))
-
 @app.route('/pythonlogin/flaskcode')
 def editor():
     if 'loggedin' in session:
