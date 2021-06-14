@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<div class="register" style="margin: 25px auto 25px auto; text-align: center;">
+    <h1>Użytkownicy grupy: {{ users[0].Group_name }}</h1>
+    {% for user in users %}
+        <h2 style="font-size: 18px;">{{ user.username }} - {{ user.Member_type }}</h2>
+    {% endfor %}
+    <form action="{{ url_for('groups_menu') }}" method="post" autocomplete="off">
+        <input type="text" name="username" placeholder="Nazwa użytkownika" id="username" required>
+        <label for="cars">Status:</label>
+    <select name="type" id="cars">
+        <option value="Administrator">Administrator</option>
+        <option value="Członek">Członek</option>
+        <option value="Obserwator">Obserwator</option>
+    </select>
+        <div class="msg">{{ msg }}</div>
+        <input type="submit" value="Dodaj" name="dodaj_do_grupy">
+        <input type="submit" value="Usuń" name="usun_z_grupy">
+    </form>
+</div>
+{% endblock %}
